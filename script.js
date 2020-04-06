@@ -1,10 +1,9 @@
 window.addEventListener('DOMContentLoaded', getData);
 
-function getData()
-{
-    //console.log('DOM fully loaded and parsed');
+function getData() {
+  //console.log('DOM fully loaded and parsed');
   fetch("https://css-tricks.com/wp-json/wp/v2/pages?per_page=50").then(initial => initial.json())
-  .then(handleData);
+    .then(handleData);
 };
 
 function handleData(data) {
@@ -12,14 +11,14 @@ function handleData(data) {
   data.forEach(displayData);
 }
 
-function displayData(data){
+function displayData(data) {
   console.log(data)
 
   const template = document.querySelector('template').content;
   const clone = template.cloneNode(true);
 
-  clone.querySelector('h1').innerHTML = data.title.rendered;
-    clone.querySelector('p').innerHTML = data.excerpt.rendered;
+  clone.querySelector('h2').innerHTML = data.title.rendered;
+  clone.querySelector('p').innerHTML = data.excerpt.rendered;
 
   document.querySelector('main').appendChild(clone);
 }
