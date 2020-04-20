@@ -1,3 +1,5 @@
+/* I've borrowed some code from Daniel here, thanks */
+
 *,
 *:before,
 *:after {
@@ -9,13 +11,6 @@ html {
 }
 
 body {
-  /*
-    width: 100%;
-    height: 100%;
-    margin: 0px;
-    padding: 0px;
-    overflow-x: hidden;
-*/
   padding: 1rem;
   background: #f2efea;
 }
@@ -39,20 +34,25 @@ main {
   grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
   max-width: 1200px;
   margin: 0 auto;
-
-  /* Keep adding new columns - even if theres is no content for them. content does not always take up full width */
-  /*    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
-  /* Don't add more columns than theres is content for. && +content "always" take full width */
   padding: 1rem;
   grid-column-gap: 2rem;
   grid-row-gap: 5rem;
 }
 
+nav a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+nav a:hover {}
+
+/*
 .line {
   grid-column: 1/-1;
   height: 2px;
   background: darkgray;
 }
+*/
 
 .box {
   margin-top: 1rem;
@@ -104,5 +104,6 @@ article > button {
 }
 
 article > button:hover {
-  background: darkblue;
+  cursor: pointer;
+  background: hotpink;
 }
